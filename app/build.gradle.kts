@@ -72,12 +72,12 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta4")
 
     // Arch Components
-    implementation("androidx.core:core-ktx:1.3.0-alpha02")
+    implementation("androidx.core:core-ktx:1.3.0-rc01")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("android.arch.navigation:navigation-fragment:1.0.0")
-    implementation("androidx.room:room-runtime:2.2.4")
+    implementation("androidx.room:room-runtime:2.2.5")
     implementation("androidx.lifecycle:lifecycle-common-java8:2.2.0")
-    kapt("androidx.room:room-compiler:2.2.4")
+    kapt("androidx.room:room-compiler:2.2.5")
 
     //3rd party libs
     implementation("com.intuit.sdp:sdp-android:1.0.6")
@@ -92,7 +92,7 @@ dependencies {
     // Test libs
     testImplementation("junit:junit:4.12")
     testImplementation("org.mockito:mockito-core:2.19.0")
-    androidTestImplementation("androidx.room:room-testing:2.2.4")
+    androidTestImplementation("androidx.room:room-testing:2.2.5")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test:rules:1.2.0")
     androidTestImplementation("androidx.annotation:annotation:1.1.0")

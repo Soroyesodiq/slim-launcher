@@ -35,11 +35,7 @@
             android:name=".MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="fullSensor"
-            android:stateNotNeeded="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
+            android:stateNotNeeded="true" />
 
         <meta-data
             android:name="preloaded_fonts"

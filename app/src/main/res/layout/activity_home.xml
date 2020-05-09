@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/spacing3"
+    android:background="@color/testColor"
+    android:padding="@dimen/spacing2"
     app:layoutDescription="@xml/home_motion_scene"
+    app:motionDebug="NO_DEBUG"
     tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/home_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing6"
-        android:layout_marginTop="@dimen/spacing7"
-        android:layout_marginEnd="@dimen/spacing6"
         android:text="@string/main_placeholder_clock"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="@dimen/heading3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/home_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing"
         android:padding="@dimen/spacing2"
         android:text="@string/main_placeholder_date"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_time" />
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing5"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
         tools:itemCount="4"
         tools:listitem="@layout/home_list_item_app" />
 
     <ImageView
-        android:layout_width="@dimen/spacing6"
-        android:layout_height="@dimen/spacing6"
-        android:layout_marginStart="@dimen/spacing5"
-        android:layout_marginBottom="@dimen/spacing4"
+        android:id="@+id/home_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/main_fragment_options"
         android:onClick="onMore"
-        android:padding="@dimen/spacing"
+        android:padding="@dimen/spacing6"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_more_horiz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:src="@drawable/ic_more_horiz" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="spacing">@dimen/_4sdp</dimen>
-    <dimen name="spacing2">@dimen/_8sdp</dimen>
-    <dimen name="spacing3">@dimen/_12sdp</dimen>
-    <dimen name="spacing4">@dimen/_16sdp</dimen>
+
+    <dimen name="unit1">2dp</dimen>
+    <dimen name="unit2">4dp</dimen>
+    <dimen name="unit3">6dp</dimen>
+    <dimen name="unit4">8dp</dimen>
+    <dimen name="unit5">10dp</dimen>
+    <dimen name="unit6">12dp</dimen>
+    <dimen name="unit7">14dp</dimen>
+    <dimen name="unit8">18dp</dimen>
+    <dimen name="unit9">24dp</dimen>
+    <dimen name="unit10">28dp</dimen>
+    <dimen name="unit11">32dp</dimen>
+    <dimen name="unit12">40dp</dimen>
+    <dimen name="unit13">48dp</dimen>
+    <dimen name="unit14">56dp</dimen>
+    <dimen name="unit15">64dp</dimen>
+    <dimen name="unit16">80dp</dimen>
+
+    <dimen name="spacing">@dimen/unit1</dimen>
+    <dimen name="spacing2">@dimen/unit2</dimen>
+    <dimen name="spacing3">@dimen/unit3</dimen>
+    <dimen name="spacing4">@dimen/unit4</dimen>
     <dimen name="spacing5">@dimen/_24sdp</dimen>
-    <dimen name="spacing6">@dimen/_36sdp</dimen>
+    <dimen name="spacing6">@dimen/unit6</dimen>
     <dimen name="spacing7">@dimen/_58sdp</dimen>
     <dimen name="spacing8">@dimen/_64sdp</dimen>
     <dimen name="spacing9">@dimen/_72sdp</dimen>
 
 
-    <dimen name="body">@dimen/_14ssp</dimen>
-    <dimen name="heading1">@dimen/_18ssp</dimen>
+    <dimen name="heading1">@dimen/_16ssp</dimen>
     <dimen name="heading2">@dimen/_24ssp</dimen>
-    <dimen name="heading3">@dimen/_36ssp</dimen>
-    <dimen name="heading4">@dimen/_40ssp</dimen>
-    <dimen name="heading5">@dimen/_56ssp</dimen>
-    <dimen name="heading6">@dimen/_46ssp</dimen>
+    <dimen name="heading3">32sp</dimen>
+
+    <dimen name="home_app_text_size">24sp</dimen>
+<!--    <dimen name="heading3">@dimen/_36ssp</dimen>-->
+<!--    <dimen name="heading4">@dimen/_40ssp</dimen>-->
+<!--    <dimen name="heading5">@dimen/_56ssp</dimen>-->
+<!--    <dimen name="heading6">@dimen/_46ssp</dimen>-->
 </resources>
+<!-- Largest device in range is a Nexus S (480x800) -->

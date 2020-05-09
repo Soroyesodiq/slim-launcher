@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding3"
+    android:padding="@dimen/spacing3"
     tools:context=".OptionsActivity">
 
     <androidx.fragment.app.FragmentContainerView

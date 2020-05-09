@@ -17,9 +17,9 @@ android {
         minSdkVersion(21)
         targetSdkVersion(29)
         versionCode = 42
-        versionName = "2.4.7"
+        versionName = "2.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables{useSupportLibrary = true}
+        vectorDrawables { useSupportLibrary = true }
 
         signingConfigs {
             register("release") {
@@ -32,31 +32,29 @@ android {
     }
 
 
-
     buildTypes {
         named("release").configure {
             isMinifyEnabled = true
             isShrinkResources = true
-            proguardFiles(getDefaultProguardFile ("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
         }
         named("debug").configure {
             isMinifyEnabled = false
-            proguardFiles (getDefaultProguardFile ("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions{
+    kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 play {
     serviceAccountCredentials = file(project.extra["RELEASE_GPP_KEY"] as String)
     track = "beta"
-    userFraction = 0.5
     releaseStatus = "inProgress"
     defaultToAppBundles = true
 }
@@ -77,6 +75,7 @@ dependencies {
     implementation("android.arch.navigation:navigation-fragment:1.0.0")
     implementation("androidx.room:room-runtime:2.2.5")
     implementation("androidx.lifecycle:lifecycle-common-java8:2.2.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt("androidx.room:room-compiler:2.2.5")
 
     //3rd party libs

@@ -37,19 +37,19 @@ abstract class BaseFragment : Fragment() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        with(activity as MainActivity) {
-            this.attachSubscriber(this@BaseFragment)
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        with(activity as MainActivity) {
-            this.detachSubscriber(this@BaseFragment)
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        with(activity as MainActivity) {
+//            this.attachSubscriber(this@BaseFragment)
+//        }
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        with(activity as MainActivity) {
+//            this.detachSubscriber(this@BaseFragment)
+//        }
+//    }
 
     protected fun launchActivity(view: View, intent: Intent) {
         val left = 0

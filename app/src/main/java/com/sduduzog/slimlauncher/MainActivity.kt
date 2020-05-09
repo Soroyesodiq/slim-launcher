@@ -71,6 +71,9 @@ class MainActivity : AppCompatActivity(),
 
     override fun onStart() {
         super.onStart()
+
+
+
         homeWatcher.startWatch()
     }
 
@@ -108,7 +111,7 @@ class MainActivity : AppCompatActivity(),
 
     override fun onHomePressed() {
         dispatchHome()
-        navigator.popBackStack(R.id.homeFragment, false)
+//        navigator.popBackStack(R.id.homeFragment, false)
     }
 
     private fun showSystemUI() {

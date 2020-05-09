@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <dimen name="padding1">@dimen/_4sdp</dimen>
+    <dimen name="padding2">@dimen/_8sdp</dimen>
+    <dimen name="padding3">@dimen/_12sdp</dimen>
+    <dimen name="heading6">@dimen/_34ssp</dimen>
 </resources>

@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/optionsFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.sduduzog.slimlauncher.ui.main.HomeFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment">
-        <action
-            android:id="@+id/action_homeFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
-    </fragment>
     <fragment
         android:id="@+id/optionsFragment"
         android:name="com.sduduzog.slimlauncher.ui.options.OptionsFragment"

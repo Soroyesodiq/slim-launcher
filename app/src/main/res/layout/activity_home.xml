@@ -5,7 +5,6 @@
     android:id="@+id/activity_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/testColor"
     android:padding="@dimen/spacing2"
     app:layoutDescription="@xml/home_motion_scene"
     tools:context=".HomeActivity">
@@ -47,7 +46,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/main_fragment_options"
-        android:onClick="onMore"
         android:padding="@dimen/spacing6"
         android:scaleType="centerInside"
         android:src="@drawable/ic_more_horiz" />

@@ -2,9 +2,10 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
     <Transition
+        android:id="@+id/home_entry_transition"
         motion:constraintSetEnd="@id/minimal_scene"
         motion:constraintSetStart="@id/base_scene"
-        motion:duration="250">
+        motion:duration="200">
         <OnSwipe
             motion:dragDirection="dragDown"
             motion:touchAnchorId="@id/home_time"
@@ -12,9 +13,11 @@
     </Transition>
 
     <Transition
+        android:id="@+id/home_active_transition"
         motion:constraintSetEnd="@id/active_scene"
         motion:constraintSetStart="@id/minimal_scene"
-        motion:duration="250">
+        motion:duration="200"
+        motion:motionInterpolator="easeInOut">
 
     </Transition>
 
@@ -162,9 +165,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@id/home_time"
-            motion:layout_constraintStart_toEndOf="@id/home_time"
-            motion:layout_constraintTop_toTopOf="@id/home_time"
-            motion:layout_constraintVertical_bias=".665" />
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/home_time" />
         <Constraint
             android:id="@id/home_list"
             android:layout_width="0dp"

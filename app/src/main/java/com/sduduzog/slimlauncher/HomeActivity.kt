@@ -4,6 +4,7 @@ import android.content.*
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sduduzog.slimlauncher.adapters.HomeAdapter
@@ -21,8 +22,9 @@ class HomeActivity : BaseActivity() {
     @Inject
     internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    lateinit var receiver: BroadcastReceiver
-    lateinit var viewModel: HomeViewModel
+    private lateinit var receiver: BroadcastReceiver
+    private lateinit var viewModel: HomeViewModel
+    private var canCloseTransition = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -47,6 +49,25 @@ class HomeActivity : BaseActivity() {
         home_close.setOnClickListener {
             activity_home.transitionToState(R.id.minimal_scene)
         }
+
+        activity_home.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {
+            }
+
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
+            }
+
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+            }
+
+            override fun onTransitionCompleted(p0: MotionLayout?, currentId: Int) {
+                canCloseTransition = R.id.base_scene == currentId
+                if (canCloseTransition) {
+                    activity_home.setTransition(R.id.home_entry_transition)
+                    activity_home.setTransitionDuration(200)
+                }
+            }
+        })
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.apps.observe(this, Observer { list ->
@@ -79,14 +100,10 @@ class HomeActivity : BaseActivity() {
 
 
     override fun onBackPressed() {
+        activity_home.transitionToState(R.id.base_scene)
         // super.onBackPressed()
     }
 
-
-    fun onMore(v: View) {
-        val i = Intent(this, OptionsActivity::class.java)
-        startActivity(i)
-    }
 
     fun updateClock() {
         val twenty4Hour = getSharedPreferences(getString(R.string.prefs_settings), Context.MODE_PRIVATE)

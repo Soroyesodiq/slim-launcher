@@ -2,12 +2,12 @@
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/testColor"
     android:padding="@dimen/spacing2"
     app:layoutDescription="@xml/home_motion_scene"
-    app:motionDebug="NO_DEBUG"
     tools:context=".HomeActivity">
 
     <TextView
@@ -31,7 +31,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="4"
+        tools:itemCount="5"
+        tools:listitem="@layout/home_list_item_app" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_list_extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
         tools:listitem="@layout/home_list_item_app" />
 
     <ImageView
@@ -43,5 +51,14 @@
         android:padding="@dimen/spacing6"
         android:scaleType="centerInside"
         android:src="@drawable/ic_more_horiz" />
+
+    <ImageView
+        android:id="@+id/home_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/main_fragment_options"
+        android:padding="@dimen/spacing6"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_baseline_close" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

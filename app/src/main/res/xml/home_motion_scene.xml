@@ -2,15 +2,23 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
     <Transition
-        motion:constraintSetEnd="@id/home_minimal_scene"
-        motion:constraintSetStart="@id/home_base_scene"
-        motion:duration="300">
+        motion:constraintSetEnd="@id/minimal_scene"
+        motion:constraintSetStart="@id/base_scene"
+        motion:duration="250">
         <OnSwipe
             motion:dragDirection="dragDown"
             motion:touchAnchorId="@id/home_time"
             motion:touchAnchorSide="top" />
     </Transition>
-    <ConstraintSet android:id="@+id/home_base_scene">
+
+    <Transition
+        motion:constraintSetEnd="@id/active_scene"
+        motion:constraintSetStart="@id/minimal_scene"
+        motion:duration="250">
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/base_scene">
 
         <Constraint
             android:id="@id/home_time"
@@ -26,7 +34,7 @@
             android:id="@id/home_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/unit6"
+            android:layout_marginTop="@dimen/unit7"
             motion:layout_constraintEnd_toEndOf="@id/home_time"
             motion:layout_constraintStart_toStartOf="@id/home_time"
             motion:layout_constraintTop_toBottomOf="@id/home_time" />
@@ -40,12 +48,17 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
 
-            <PropertySet
-                android:alpha="0"
-                android:visibility="gone"
-                motion:motionProgress=".50"
-                motion:visibilityMode="ignore" />
+        <Constraint
+            android:id="@id/home_list_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="@id/home_list"
+            motion:layout_constraintStart_toStartOf="@id/home_list"
+            motion:layout_constraintTop_toBottomOf="@id/home_list">
+            <PropertySet android:visibility="invisible" />
         </Constraint>
 
         <Constraint
@@ -54,16 +67,21 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent">
-            <PropertySet
-                android:alpha="0"
-                android:visibility="gone"
-                motion:visibilityMode="ignore" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
 
-
+        <Constraint
+            android:id="@id/home_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="invisible" />
         </Constraint>
 
     </ConstraintSet>
-    <ConstraintSet android:id="@+id/home_minimal_scene">
+
+    <ConstraintSet android:id="@+id/minimal_scene">
 
         <Constraint
             android:id="@id/home_time"
@@ -78,7 +96,6 @@
             android:id="@id/home_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/unit1"
             motion:layout_constraintEnd_toEndOf="@id/home_time"
             motion:layout_constraintStart_toStartOf="@id/home_time"
             motion:layout_constraintTop_toBottomOf="@id/home_time">
@@ -94,9 +111,16 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintVertical_bias="0.65">
-            <!--            <PropertySet-->
-            <!--                android:alpha="1"-->
-            <!--                android:visibility="visible" />-->
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+        <Constraint
+            android:id="@id/home_list_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="@id/home_list"
+            motion:layout_constraintStart_toStartOf="@id/home_list"
+            motion:layout_constraintTop_toBottomOf="@id/home_list">
+            <PropertySet android:visibility="invisible" />
         </Constraint>
 
         <Constraint
@@ -106,12 +130,79 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintStart_toStartOf="parent">
-            <PropertySet
-                android:alpha="1"
-                android:visibility="visible" />
+            <PropertySet android:visibility="visible" />
+            <Transform android:rotation="0" />
+        </Constraint>
 
+        <Constraint
+            android:id="@id/home_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="invisible" />
+            <Transform android:rotation="-135" />
         </Constraint>
     </ConstraintSet>
 
+    <ConstraintSet android:id="@+id/active_scene">
+        <Constraint
+            android:id="@id/home_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <Transform
+                android:scaleX=".7"
+                android:scaleY=".7" />
+        </Constraint>
+        <Constraint
+            android:id="@id/home_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/home_time"
+            motion:layout_constraintStart_toEndOf="@id/home_time"
+            motion:layout_constraintTop_toTopOf="@id/home_time"
+            motion:layout_constraintVertical_bias=".665" />
+        <Constraint
+            android:id="@id/home_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/home_time">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/home_list_extra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="@id/home_list"
+            motion:layout_constraintStart_toStartOf="@id/home_list"
+            motion:layout_constraintTop_toBottomOf="@id/home_list">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/home_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="invisible" />
+            <Transform android:rotation="135" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/home_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <PropertySet android:visibility="visible" />
+            <Transform android:rotation="0" />
+        </Constraint>
+
+    </ConstraintSet>
 
 </MotionScene>

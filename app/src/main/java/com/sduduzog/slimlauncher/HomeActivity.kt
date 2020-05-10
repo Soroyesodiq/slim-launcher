@@ -39,15 +39,23 @@ class HomeActivity : BaseActivity() {
         val adapter2 = HomeAdapter(appListener)
 
         home_list.adapter = adapter1
+        home_list_extra.adapter = adapter2
+        home_more.setOnClickListener {
+            activity_home.transitionToState(R.id.active_scene)
+        }
+
+        home_close.setOnClickListener {
+            activity_home.transitionToState(R.id.minimal_scene)
+        }
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.apps.observe(this, Observer { list ->
             list?.let { apps ->
                 adapter1.setItems(apps.filter {
-                    it.sortingIndex < 4
+                    it.sortingIndex < 5
                 })
                 adapter2.setItems(apps.filter {
-                    it.sortingIndex >= 4
+                    it.sortingIndex >= 5
                 })
             }
         })

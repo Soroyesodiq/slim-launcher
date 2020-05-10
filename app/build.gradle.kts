@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
 
-    id("com.github.triplet.play") version "2.5.0"
+    id("com.github.triplet.play") version "2.7.5"
 
     kotlin("android")
 
@@ -16,7 +16,7 @@ android {
         applicationId = "com.sduduzog.slimlauncher"
         minSdkVersion(21)
         targetSdkVersion(29)
-        versionCode = 42
+        versionCode = 43
         versionName = "2.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
@@ -54,12 +54,12 @@ android {
 }
 play {
     serviceAccountCredentials = file(project.extra["RELEASE_GPP_KEY"] as String)
-    track = "beta"
+    track = "alpha"
     releaseStatus = "inProgress"
     defaultToAppBundles = true
 }
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(fileTree(Pair("dir", "libs"), Pair("include", listOf("*.jar"))))
 
     // Kotlin Libraries
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
@@ -67,7 +67,7 @@ dependencies {
     // Support Libraries
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta4")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta5")
 
     // Arch Components
     implementation("androidx.core:core-ktx:1.3.0-rc01")
